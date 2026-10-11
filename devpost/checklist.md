@@ -19,7 +19,7 @@ Build mode: fast (the learner selected `nori-full-send`: autonomous work after p
   Learner check: Run `pnpm check:live` with a paragraph of your choice, open two of the printed source links, and confirm that the excerpts are on those pages and that the verdicts are reasonable.
   Commit: `Add claim verification pipeline with validated citations`
 
-- [ ] **2. You can paste text and see it light up with a readiness summary**
+- [x] **2. You can paste text and see it light up with a readiness summary**
   Becomes usable: The page at `http://localhost:3000` accepts pasted text, shows progress, highlights each checked claim in place as its verdict arrives, and shows the publication readiness summary with the fixed status wording.
   Why now: This is the unique kernel on the screen. Both items are P0. An early look at the real report can change the remaining build.
   PRD ref: `prd.md > Text Input`, `prd.md > Inline Claim Highlighting`, `prd.md > Publication Readiness Summary`, `prd.md > The Core Journey` (steps 1 to 4)
@@ -76,3 +76,6 @@ Activity mode:
 - A citation can have the source type "other" in the data model — a claim that only weak sources mention is shown as unverified with those sources and a specific reason, not with an empty card.
 - The live check script is `scripts/check-live.mts`, not `.ts` — the script uses top-level `await`, which needs an ES module.
 - The `typecheck` script runs `next typegen` first — Next.js 16 generates the `LayoutProps` type that the layout uses.
+- The early hands-on checkpoint after slice 2 is merged into the final review — after slice 2 started, the learner sent a new instruction to work autonomously and to ask only when blocked. The agent verified slice 2 with real requests and a browser run. The learner has not yet tried the app.
+- The route has no `dynamic` export — Next.js 16 rejects it when `cacheComponents` is on, and a POST handler is not cached.
+- The brand assets that the learner supplied are in `public/brand/`, the header shows the logo, and the square icon is the favicon — the learner added the assets during the build. The ink colour is the navy of the logo.

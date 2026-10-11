@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="460" viewBox="0 0 1800 460"><defs>
+  <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3EE6DB"/><stop offset="52%" stop-color="#5AA9FF"/><stop offset="100%" stop-color="#9A78FF"/></linearGradient>
+  <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#142744"/><stop offset="100%" stop-color="#081427"/></linearGradient>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<g transform="translate(28 52) scale(.69)"><rect x="8" y="8" width="496" height="496" rx="116" fill="url(#plate)"/>
+<rect x="9.5" y="9.5" width="493" height="493" rx="114.5" fill="none" stroke="#35506F" stroke-width="3" opacity=".7"/>
+<!-- concentric incomplete verification scan rings -->
+<circle cx="248" cy="251" r="153" fill="none" stroke="#315374" stroke-width="14" stroke-dasharray="715 247" transform="rotate(-43 248 251)" stroke-linecap="round" opacity=".8"/>
+<circle cx="248" cy="251" r="123" fill="none" stroke="url(#grad)" stroke-width="19" stroke-dasharray="480 293" transform="rotate(-37 248 251)" stroke-linecap="round"/>
+<circle cx="248" cy="251" r="91" fill="#0D2039" stroke="#3A5C7A" stroke-width="3"/>
+<!-- large crisp check -->
+<path d="M 180 253 L 226 298 L 321 196" fill="none" stroke="url(#grad)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- evidence nodes on outer arc -->
+<circle cx="389" cy="159" r="16" fill="#44DCD9"/>
+<circle cx="389" cy="159" r="27" fill="none" stroke="#44DCD9" stroke-width="3" opacity=".38"/>
+<circle cx="125" cy="354" r="11" fill="#8B84FF"/>
+<circle cx="352" cy="380" r="9" fill="#58B6FF"/>
+<!-- star glint -->
+<path d="M 359 91 L 364 104 L 377 109 L 364 114 L 359 127 L 354 114 L 341 109 L 354 104 Z" fill="#A6FFF5" opacity=".9"/></g>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+  <text x="430" y="224" font-size="132" font-weight="bold" letter-spacing="-6" fill="#10233E">Proof<tspan fill="#2679B5">Pilot</tspan></text>
+  <rect x="1280" y="121" width="150" height="118" rx="37" fill="url(#grad)"/>
+  <text x="1355" y="207" text-anchor="middle" font-size="73" font-weight="bold" fill="#0C1930">AI</text>
+  <rect x="433" y="271" width="920" height="2" rx="1" fill="#D8E2EB"/>
+  <text x="432" y="337" font-size="42" font-weight="500" letter-spacing="1.5" fill="#4B6178">DON'T JUST TRUST AI. VERIFY IT.</text>
+</g></svg>

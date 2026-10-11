@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), ui-serif, Georgia, serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-paper: #faf8f4;
+  --color-surface: #ffffff;
+  --color-ink: #10223d;
+  --color-muted: #4b6178;
+  --color-rule: #e4dfd5;
+
+  --color-brand: #2478b6;
+
+  /* Reserved for claim status. */
+  --color-supported: #17663c;
+  --color-supported-soft: #e2f2e7;
+  --color-contradicted: #a8261a;
+  --color-contradicted-soft: #fce6e2;
+  --color-unverified: #875a00;
+  --color-unverified-soft: #faedc8;
+  --color-pending: #4b6178;
+  --color-pending-soft: #eeebe5;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Each status has its own underline style, so that it does not depend on colour. */
+.claim {
+  border-radius: 2px;
+  padding: 1px 0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: background-color 300ms ease;
+}
+.claim-supported {
+  background: var(--color-supported-soft);
+  text-decoration-color: var(--color-supported);
+  text-decoration-style: solid;
+}
+.claim-contradicted {
+  background: var(--color-contradicted-soft);
+  text-decoration-color: var(--color-contradicted);
+  text-decoration-style: double;
+}
+.claim-unverified {
+  background: var(--color-unverified-soft);
+  text-decoration-color: var(--color-unverified);
+  text-decoration-style: dashed;
+}
+.claim-pending {
+  background: var(--color-pending-soft);
+  text-decoration-color: var(--color-pending);
+  text-decoration-style: dotted;
+  animation: claim-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes claim-pulse {
+  50% {
+    background: var(--color-rule);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .claim-pending {
+    animation: none;
+  }
 }
