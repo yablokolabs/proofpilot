@@ -74,7 +74,9 @@ Not verified, to check at the start of the build:
 - **Requirements:** Node 22, pnpm, and two keys in a local `.env` file: `NEBIUS_API_KEY` and `TAVILY_API_KEY`. `NEBIUS_MODEL` is optional. `.env.example` lists the names with no values.
 - **Start:** `pnpm install`, then `pnpm dev`, then open `http://localhost:3000`.
 - **Checks:** `pnpm test` runs the unit tests. `pnpm check:live "<text>"` runs the real pipeline from the command line and prints the events.
-- **Submission:** a short demo video and a public GitHub repository. Deployment is optional and is not planned. The decision can change in `6-ship`.
+- **Submission:** a short demo video and a public GitHub repository. Deployment is optional and is not planned.
+- **Repository:** https://github.com/yablokolabs/proofpilot (public, MIT licence).
+- **Demo video file:** `demo/proofpilot-demo.mp4` (2:18). The public video link is not recorded yet: the learner uploads the video.
 
 ## Look and Feel
 From `prd.md > Look and Feel` and `scope.md > Inspiration & Identity`.
@@ -251,7 +253,7 @@ proofpilot/
 
 **Learner decisions**
 - Accepted the recommended stack: Next.js, TypeScript, Tailwind, Tavily. ("approved")
-- **LLM provider: Nebius**, with the key from `~/.hermes/.env`. This replaces Claude from the agent's first recommendation.
+- **LLM provider: Nebius**, with a key that the learner supplied. This replaces Claude from the agent's first recommendation.
 - Inline highlighting and the summary are P0.
 - Development tools: the Hindsight memory bank `proofpilot` and the `context-mode` CLI. These are not components of the product.
 
@@ -273,5 +275,5 @@ The Nebius key works. Nine models returned valid strict-schema JSON for a small 
 
 **Open issues**
 1. **Model selection for the judge step.** The default is provisional. During the build, the agent runs the same claims through two or three models with `pnpm check:live` and reports the real verdicts. The learner selects the model.
-2. **Keys.** Resolved: the learner gave permission to use `NEBIUS_API_KEY` and `TAVILY_API_KEY` from `~/.hermes/.env`. They are copied to the project `.env`, which git ignores.
+2. **Keys.** Resolved: the learner supplied `NEBIUS_API_KEY` and `TAVILY_API_KEY`. They are in the project `.env`, which git ignores.
 3. Carried from `prd.md > Open Questions`: all items are resolved or approved as written.
