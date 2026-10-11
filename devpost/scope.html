@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ProofPilot AI: Scope</title>
+<style>
+  :root { --ink:#16202e; --muted:#5b6778; --line:#dfe4ea; --bg:#f6f7f9; --card:#fff;
+          --green:#1f8a4c; --red:#c8372d; --amber:#b7791f; --accent:#1d4ed8; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+  main { max-width:920px; margin:0 auto; padding:40px 20px 64px; }
+  h1 { font-size:2rem; margin:0 0 4px; }
+  h2 { font-size:1.1rem; margin:36px 0 12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+  .tag { color:var(--muted); margin:0; }
+  .hook { font-style:italic; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px 20px; }
+  .grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); }
+  svg { width:100%; height:auto; display:block; }
+  details { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 18px; margin-bottom:10px; }
+  summary { cursor:pointer; font-weight:600; }
+  ul { margin:10px 0 0; padding-left:20px; }
+  mark { padding:1px 4px; border-radius:4px; }
+  .g { background:#d9f2e3; } .r { background:#f9d9d6; } .a { background:#fbeacb; }
+  .note { font-size:.85rem; color:var(--muted); margin-top:28px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>ProofPilot AI</h1>
+  <p class="tag"><strong>Don't Just Trust AI. Verify It.</strong> The credibility check before you hit publish.</p>
+  <p class="tag hook">Look confident. Stay credible.</p>
+
+  <h2>User, core loop, proof</h2>
+  <div class="card">
+    <svg viewBox="0 0 880 250" role="img" aria-labelledby="t d">
+      <title id="t">Core loop</title>
+      <desc id="d">Alex pastes text. ProofPilot extracts claims, retrieves evidence, and evaluates claims. The result is the original text with highlights, evidence cards, and a summary.</desc>
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5b6778"/></marker></defs>
+      <g font-family="system-ui,sans-serif" font-size="13" text-anchor="middle">
+        <rect x="10" y="30" width="150" height="70" rx="8" fill="#eef2ff" stroke="#1d4ed8"/>
+        <text x="85" y="60" font-weight="600">Alex</text><text x="85" y="80">pastes AI text</text>
+        <rect x="200" y="30" width="140" height="70" rx="8" fill="#fff" stroke="#5b6778"/>
+        <text x="270" y="60" font-weight="600">Extract</text><text x="270" y="80">verifiable claims</text>
+        <rect x="380" y="30" width="140" height="70" rx="8" fill="#fff" stroke="#5b6778"/>
+        <text x="450" y="60" font-weight="600">Retrieve</text><text x="450" y="80">real evidence</text>
+        <rect x="560" y="30" width="140" height="70" rx="8" fill="#fff" stroke="#5b6778"/>
+        <text x="630" y="60" font-weight="600">Evaluate</text><text x="630" y="80">each claim</text>
+        <rect x="740" y="30" width="130" height="70" rx="8" fill="#16202e"/>
+        <text x="805" y="60" font-weight="600" fill="#fff">Credibility</text><text x="805" y="80" fill="#fff">report</text>
+        <g stroke="#5b6778" stroke-width="1.5" marker-end="url(#ar)">
+          <line x1="160" y1="65" x2="198" y2="65"/><line x1="340" y1="65" x2="378" y2="65"/>
+          <line x1="520" y1="65" x2="558" y2="65"/><line x1="700" y1="65" x2="738" y2="65"/>
+          <line x1="805" y1="100" x2="805" y2="148"/>
+        </g>
+        <rect x="200" y="150" width="670" height="80" rx="8" fill="#fff" stroke="#dfe4ea"/>
+        <rect x="220" y="170" width="190" height="40" rx="6" fill="#d9f2e3"/><text x="315" y="195">Supported</text>
+        <rect x="440" y="170" width="190" height="40" rx="6" fill="#f9d9d6"/><text x="535" y="195">Contradicted</text>
+        <rect x="660" y="170" width="190" height="40" rx="6" fill="#fbeacb"/><text x="755" y="195">Unverified</text>
+        <text x="100" y="185" font-weight="600">Proof</text><text x="100" y="204">the text lights up</text>
+      </g>
+    </svg>
+  </div>
+
+  <h2>The kernel</h2>
+  <div class="grid">
+    <div class="card"><strong>The question</strong><br>"Will this AI-generated content embarrass me when someone checks the facts?"</div>
+    <div class="card"><strong>The signature moment</strong><br>A confident paragraph: <mark class="g">one claim holds</mark>, <mark class="a">one cannot be checked</mark>, and <mark class="r">one impressive statistic turns red</mark>. A click shows the evidence that contradicts it.</div>
+    <div class="card"><strong>Who</strong><br>Alex, a marketing professional who publishes AI-assisted posts, presentations, and client reports, and checks facts by hand in Google today.</div>
+  </div>
+
+  <h2>Boundary</h2>
+  <details open><summary>P0: must work end to end</summary>
+    <ul><li>Text input</li><li>Real claim extraction</li><li>Real evidence retrieval</li><li>Supported / Contradicted / Unverified classification</li><li>Source citations</li><li>Inline claim highlighting on the original text</li><li>Publication readiness summary: "REVIEW BEFORE PUBLISHING" or "ALL CHECKED CLAIMS SUPPORTED"</li><li>A working end-to-end demo</li></ul></details>
+  <details><summary>P1</summary>
+    <ul><li>Clickable evidence cards</li><li>Professional, responsive UI</li></ul></details>
+  <details><summary>Integrity rules</summary>
+    <ul><li>No fabricated sources, URLs, citations, or results</li><li>A source must be relevant to the claim</li><li>Contradicting evidence is not the same as insufficient evidence</li><li>Missing or weak evidence gives Unverified</li><li>LLM confidence is not proof</li><li>No claim of full coverage if statements were skipped</li><li>No "safe", "guaranteed true", or "verified" wording</li><li>Clear loading, error, and empty states</li></ul></details>
+  <details><summary>Explicitly cut</summary>
+    <ul><li>Browser extensions</li><li>PDF uploads</li><li>User accounts and authentication</li><li>Multi-agent orchestration</li><li>Background monitoring</li><li>Social media integrations</li><li>Automated publishing</li><li>Complex dashboards</li><li>Billing</li><li>Enterprise features</li></ul></details>
+
+  <p class="note">Companion to <code>scope.md</code>. The Markdown file is the source of truth.</p>
+</main>
+</body>
+</html>

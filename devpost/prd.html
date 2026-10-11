@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ProofPilot AI: Product Requirements</title>
+<style>
+  :root { --ink:#16202e; --muted:#5b6778; --line:#dfe4ea; --bg:#f6f7f9; --card:#fff; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+  main { max-width:920px; margin:0 auto; padding:40px 20px 64px; }
+  h1 { font-size:2rem; margin:0 0 4px; }
+  h2 { font-size:1.1rem; margin:36px 0 12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+  p.tag { color:var(--muted); margin:0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px 20px; }
+  svg { width:100%; height:auto; display:block; }
+  .steps { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+  .steps button { font:inherit; padding:6px 14px; border:1px solid var(--line); border-radius:999px; background:#fff; cursor:pointer; }
+  .steps button[aria-selected="true"] { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .panel[hidden] { display:none; }
+  details { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 18px; margin-bottom:10px; }
+  summary { cursor:pointer; font-weight:600; }
+  ul { margin:10px 0 0; padding-left:20px; }
+  table { border-collapse:collapse; width:100%; }
+  td, th { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  .pill { display:inline-block; padding:1px 8px; border-radius:4px; font-weight:600; font-size:.85rem; }
+  .g { background:#d9f2e3; } .r { background:#f9d9d6; } .a { background:#fbeacb; }
+  .note { font-size:.85rem; color:var(--muted); margin-top:28px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>ProofPilot AI: Product Requirements</h1>
+  <p class="tag">One screen. One loop. Each verdict can be traced to a real source.</p>
+
+  <h2>Screen layout in the report state</h2>
+  <div class="card">
+    <svg viewBox="0 0 880 300" role="img" aria-labelledby="t d">
+      <title id="t">Report layout</title>
+      <desc id="d">The summary is at the top. Below it, the original text with highlights is on the left and the evidence card for the selected claim is on the right.</desc>
+      <g font-family="system-ui,sans-serif" font-size="13">
+        <rect x="10" y="10" width="860" height="70" rx="8" fill="#16202e"/>
+        <text x="30" y="40" fill="#fff" font-weight="600">Publication readiness summary</text>
+        <text x="30" y="62" fill="#cbd5e1">REVIEW BEFORE PUBLISHING · analysed · supported · contradicted · unverified</text>
+        <rect x="10" y="95" width="520" height="195" rx="8" fill="#fff" stroke="#dfe4ea"/>
+        <text x="30" y="122" font-weight="600">Original text, wording not changed</text>
+        <rect x="30" y="138" width="300" height="20" rx="4" fill="#d9f2e3"/><text x="38" y="153">Supported claim</text>
+        <rect x="30" y="170" width="380" height="20" rx="4" fill="#f9d9d6" stroke="#c8372d" stroke-width="2"/><text x="38" y="185">Contradicted claim (selected)</text>
+        <rect x="30" y="202" width="240" height="20" rx="4" fill="#fbeacb"/><text x="38" y="217">Unverified claim</text>
+        <text x="30" y="250" fill="#5b6778">Unchecked text has no mark.</text>
+        <text x="30" y="270" fill="#5b6778">"Only the highlighted claims were checked."</text>
+        <line x1="410" y1="180" x2="548" y2="180" stroke="#c8372d" stroke-width="2"/>
+        <rect x="550" y="95" width="320" height="195" rx="8" fill="#fff" stroke="#c8372d" stroke-width="2"/>
+        <text x="570" y="122" font-weight="600">Evidence card</text>
+        <text x="570" y="146">Claim · status · short explanation</text>
+        <text x="570" y="172">Citation: title, URL, excerpt</text>
+        <text x="570" y="194">Citation: title, URL, excerpt</text>
+        <text x="570" y="250" fill="#5b6778">Beside the text on a wide screen,</text>
+        <text x="570" y="270" fill="#5b6778">below it on a narrow screen (assumption).</text>
+      </g>
+    </svg>
+  </div>
+
+  <h2>The core journey, step by step</h2>
+  <div class="card">
+    <div class="steps" role="tablist" aria-label="Journey steps">
+      <button role="tab" aria-selected="true" data-i="0">1 Arrive</button>
+      <button role="tab" aria-selected="false" data-i="1">2 Paste and check</button>
+      <button role="tab" aria-selected="false" data-i="2">3 Wait</button>
+      <button role="tab" aria-selected="false" data-i="3">4 Report</button>
+      <button role="tab" aria-selected="false" data-i="4">5 Inspect</button>
+    </div>
+    <div class="panel"><strong>Arrive.</strong> A text box, the input-length limit, and the Check claims button. No sample result before a real check.<ul><li>Empty input cannot be submitted.</li><li>Text above the limit is blocked with a message. No silent truncation.</li></ul></div>
+    <div class="panel" hidden><strong>Paste and check.</strong> Alex pastes an AI-generated paragraph and selects Check claims.<ul><li>Claims are statistics, historical facts, research findings, and similar statements.</li><li>Each claim maps to an exact span of the original text.</li></ul></div>
+    <div class="panel" hidden><strong>Wait.</strong> A clear indication that the analysis is in progress.<ul><li>A second check cannot start at the same time.</li><li>On failure: a clear error, the text stays in the box, and no partial or invented report appears.</li></ul></div>
+    <div class="panel" hidden><strong>Report.</strong> The summary, then the original text with highlights.<ul><li>REVIEW BEFORE PUBLISHING if a claim is contradicted or unverified.</li><li>ALL CHECKED CLAIMS SUPPORTED if all checked claims are supported.</li><li>No checkable claims: a message, and neither status.</li><li>Partial check: the checked count and a warning.</li></ul></div>
+    <div class="panel" hidden><strong>Inspect.</strong> A click on a highlight opens its evidence card.<ul><li>Claim, status, short explanation.</li><li>Citations with title, URL, and excerpt, all from retrieved sources.</li><li>Unverified cards give the reason.</li></ul></div>
+  </div>
+
+  <h2>The three statuses</h2>
+  <div class="card">
+    <table>
+      <tr><th>Status</th><th>Meaning</th></tr>
+      <tr><td><span class="pill g">Supported</span></td><td>The retrieved evidence agrees with the claim.</td></tr>
+      <tr><td><span class="pill r">Contradicted</span></td><td>The retrieved evidence disagrees with the claim.</td></tr>
+      <tr><td><span class="pill a">Unverified</span></td><td>The evidence is missing, weak, conflicting, ambiguous, inaccessible, or not relevant.</td></tr>
+    </table>
+  </div>
+
+  <h2>Decisions and open items</h2>
+  <details><summary>Sources</summary><ul><li>Primary sources first: official statistics, research papers, an organisation's own documentation.</li><li>Reputable secondary reporting when primary evidence is not available.</li><li>Each citation: title, URL, relevant excerpt.</li><li>No source, URL, or excerpt that was not retrieved.</li></ul></details>
+  <details><summary>Look and feel</summary><ul><li>Clean editorial look, readable typography, restrained colours.</li><li>Text labels for status. Never colour alone.</li><li>No chatbot-style UI.</li></ul></details>
+  <details><summary>Deferred</summary><ul><li>Saved reports or history</li><li>Sharing or export</li><li>Rewrite suggestions</li><li>Very long documents</li></ul></details>
+  <details open><summary>Open questions (agent assumptions)</summary><ul><li>Values of the input limit and the claim limit: for the spec.</li><li>Evidence card beside on wide, below on narrow.</li><li>No persistence.</li><li>No one-click sample paragraph.</li><li>No exclusion list for sources.</li></ul></details>
+
+  <p class="note">Companion to <code>prd.md</code>. The Markdown file is the source of truth.</p>
+</main>
+<script>
+  const tabs = document.querySelectorAll('.steps button'), panels = document.querySelectorAll('.panel');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.setAttribute('aria-selected', x === t));
+    panels.forEach((p, i) => p.hidden = i != t.dataset.i);
+  }));
+</script>
+</body>
+</html>
