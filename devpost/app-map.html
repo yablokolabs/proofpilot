@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ProofPilot AI: App Map</title>
+<style>
+  :root { --ink:#10223d; --muted:#4b6178; --line:#e4dfd5; --bg:#faf8f4; --card:#fff; --brand:#2478b6; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); }
+  main { max-width:900px; margin:0 auto; padding:40px 20px 64px; }
+  h1 { font-family:Georgia,serif; font-size:2rem; margin:0 0 4px; }
+  h2 { font-size:1rem; margin:36px 0 12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+  .card, details { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:16px 20px; margin-bottom:10px; }
+  summary { cursor:pointer; font-weight:600; }
+  code { background:#eef1f4; padding:1px 5px; border-radius:4px; font-size:.9em; }
+  svg { width:100%; height:auto; display:block; }
+  ol, ul { padding-left:22px; margin:8px 0 0; }
+  li { margin-bottom:6px; }
+  .muted { color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>ProofPilot AI: App Map</h1>
+  <p class="muted">A snapshot of the code at commit <code>08a388b</code>. The code can change after this map was made.</p>
+
+  <h2>What the app does</h2>
+  <div class="card">
+    <p>You paste text and select <strong>Check claims</strong>. The app finds the factual claims, searches the web for evidence, and marks each claim in your text as Supported, Contradicted, or Unverified. A click on a claim shows its evidence.</p>
+    <p>There are three main pieces: the <strong>page</strong> in the browser, one <strong>server route</strong> that runs the pipeline, and the <strong>checks in plain code</strong> that confirm the model's work.</p>
+  </div>
+
+  <h2>One action through the code</h2>
+  <div class="card">
+    <svg viewBox="0 0 860 200" role="img" aria-labelledby="t d">
+      <title id="t">The path of one check</title>
+      <desc id="d">The Check claims button calls check in page.tsx. That posts to the POST function in route.ts, which calls runCheck in pipeline.ts. runCheck calls validateVerdict in citations.ts for each claim. Events go back to the page, where HighlightedText shows the result.</desc>
+      <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#4b6178"/></marker></defs>
+      <g font-family="system-ui,sans-serif" font-size="13" text-anchor="middle">
+        <rect x="8" y="24" width="180" height="64" rx="8" fill="#fff" stroke="#2478b6" stroke-width="1.5"/><text x="98" y="52" font-weight="600">Check claims</text><text x="98" y="72" fill="#4b6178">check() · page.tsx</text>
+        <rect x="232" y="24" width="180" height="64" rx="8" fill="#fff" stroke="#10223d"/><text x="322" y="52" font-weight="600">Server route</text><text x="322" y="72" fill="#4b6178">POST · route.ts</text>
+        <rect x="456" y="24" width="180" height="64" rx="8" fill="#fff" stroke="#10223d"/><text x="546" y="52" font-weight="600">Pipeline</text><text x="546" y="72" fill="#4b6178">runCheck · pipeline.ts</text>
+        <rect x="672" y="24" width="180" height="64" rx="8" fill="#10223d"/><text x="762" y="52" font-weight="600" fill="#fff">Citation check</text><text x="762" y="72" fill="#c9d6e2">validateVerdict</text>
+        <rect x="8" y="128" width="404" height="56" rx="8" fill="#fff" stroke="#2478b6" stroke-width="1.5"/><text x="210" y="152" font-weight="600">Highlights and evidence card</text><text x="210" y="172" fill="#4b6178">HighlightedText.tsx · EvidenceCard.tsx</text>
+        <g stroke="#4b6178" stroke-width="1.5" fill="none" marker-end="url(#a)">
+          <line x1="188" y1="56" x2="230" y2="56"/><line x1="412" y1="56" x2="454" y2="56"/><line x1="636" y1="56" x2="670" y2="56"/>
+          <path d="M546 88 L546 156 L414 156" stroke-dasharray="4 4"/>
+        </g>
+        <text x="500" y="148" fill="#4b6178" font-size="12">events, one for each claim</text>
+      </g>
+    </svg>
+  </div>
+
+  <h2>A route to follow (reference route, not toured)</h2>
+  <div class="card">
+    <ol>
+      <li><strong>The click.</strong> <code>src/app/page.tsx</code>, function <code>check</code>. It posts the text to <code>/api/check</code> and applies each event to the report state with <code>applyEvent</code> from <code>src/lib/report.ts</code>.</li>
+      <li><strong>The pipeline.</strong> <code>src/lib/pipeline.ts</code>, function <code>runCheck</code>. It extracts claims, locates them with <code>locateClaims</code> (<code>src/lib/spans.ts</code>), then retrieves and judges each claim, four at a time.</li>
+      <li><strong>The integrity check.</strong> <code>src/lib/citations.ts</code>, function <code>validateVerdict</code>. It keeps a citation only if its excerpt is in the retrieved page text, and it decides when a status becomes Unverified.</li>
+    </ol>
+    <p class="muted">The route handler that connects the first two stops is the <code>POST</code> function in <code>src/app/api/check/route.ts</code>.</p>
+  </div>
+
+  <h2>To change this, start here</h2>
+  <details open><summary>What counts as a claim, or how strict a verdict is</summary><ul><li>The <code>SYSTEM</code> text in <code>src/lib/extract.ts</code> and in <code>src/lib/judge.ts</code>.</li><li>The status rules in <code>validateVerdict</code>, <code>src/lib/citations.ts</code>. Its tests are in <code>tests/citations.test.ts</code>.</li></ul></details>
+  <details><summary>The limits</summary><ul><li><code>MAX_INPUT_CHARS</code> and <code>MAX_CLAIMS</code> in <code>src/lib/limits.ts</code>.</li></ul></details>
+  <details><summary>The model or the search</summary><ul><li><code>DEFAULT_MODEL</code> in <code>src/lib/llm.ts</code>, or the <code>NEBIUS_MODEL</code> variable in <code>.env</code>.</li><li>The search options in <code>src/lib/retrieve.ts</code>.</li></ul></details>
+  <details><summary>The status wording and the counts</summary><ul><li><code>summarise</code> in <code>src/lib/summary.ts</code> for the logic, and <code>HEADLINE</code> in <code>src/components/ReadinessSummary.tsx</code> for the text.</li></ul></details>
+  <details><summary>Colours and highlight styles</summary><ul><li>The <code>--color-*</code> values and the <code>.claim-*</code> rules in <code>src/app/globals.css</code>.</li></ul></details>
+
+  <h2>A practice to reuse</h2>
+  <div class="card">
+    <p><strong>Write down the thing that can fail, with the check that will show it.</strong></p>
+    <p>The spec recorded one unknown before any code: the result for a claim comes from live search and a model, so it cannot be guaranteed (<code>devpost/spec.md</code>, "Decisions and Open Issues"). The agreed check was to run the same text several times and record the real results.</p>
+    <p>That check found a real defect. One claim received three different verdicts in three runs. The cause was that the model selected one side when the sources disagreed. The fix is a rule in code, with tests, not a change to a prompt only: <code>validateVerdict</code> gives Unverified when confirmed reputable sources have opposite stances (<code>tests/citations.test.ts</code>). After the change, the same claim was Unverified in three of three runs. The record is in <code>devpost/checklist.md</code>, "Revisions".</p>
+    <p>On another project: name the one result that you cannot guarantee, agree on a repeatable check for it before you build, and put the rule that protects it in code that a test can exercise.</p>
+  </div>
+
+  <h2>Run it again</h2>
+  <div class="card"><p><code>pnpm install</code>, put <code>NEBIUS_API_KEY</code> and <code>TAVILY_API_KEY</code> in <code>.env</code>, then <code>pnpm dev</code> and open <code>http://localhost:3000</code>. <code>pnpm test</code> runs the unit tests.</p></div>
+</main>
+</body>
+</html>
