@@ -39,7 +39,7 @@ Build mode: fast (the learner selected `nori-full-send`: autonomous work after p
   Learner check: Run a check, click a red or amber highlight, read the card, and open one source link. Say whether the evidence explains the verdict.
   Commit: `Add evidence cards with source citations`
 
-- [ ] **4. Each failure and limit state is honest, and the demo text is selected from real runs**
+- [x] **4. Each failure and limit state is honest, and the demo text is selected from real runs**
   Becomes usable: The app gives a clear message for no checkable claims, a partial check, text that is too long, a failed claim, and a failed analysis. The README says how to run it. A demo paragraph is selected from recorded real results.
   Why now: These states carry the integrity rules, and they depend on the complete page. The demo text can be selected only when the complete report exists.
   PRD ref: `prd.md > States and Boundaries`, `prd.md > Publication Readiness Summary`
@@ -79,3 +79,7 @@ Activity mode:
 - The early hands-on checkpoint after slice 2 is merged into the final review — after slice 2 started, the learner sent a new instruction to work autonomously and to ask only when blocked. The agent verified slice 2 with real requests and a browser run. The learner has not yet tried the app.
 - The route has no `dynamic` export — Next.js 16 rejects it when `cacheComponents` is on, and a POST handler is not cached.
 - The brand assets that the learner supplied are in `public/brand/`, the header shows the logo, and the square icon is the favicon — the learner added the assets during the build. The ink colour is the navy of the logo.
+- Sources that disagree now give Unverified, enforced in code — three real runs of one claim (the "8-second attention span" statistic) gave Supported, Unverified, and Contradicted. `prd.md > Claim Classification` already says that conflicting evidence gives Unverified, but the judge selected one side. The judge now cites both sides, and `citations.ts` changes the status to Unverified when confirmed citations from primary or secondary sources have opposite stances. After the change, the same claim was Unverified in three of three runs. In one of those runs the cause was a failed judge call, not the rule.
+- The demo paragraph does not contain the attention-span claim — the demo text was selected from recorded real runs. The selected paragraph gave the same result in three consecutive runs: 2 supported, 1 contradicted, 1 unverified.
+- Slice 4 verification results: an opinion-only paragraph gave zero claims and the "no checkable claims" state; a paragraph with 11 claims gave 8 checked and 3 not assessed; text above the limit gave HTTP 400; an invalid model key gave the analysis error event and no report; the production build passed.
+- The README is the full project README with diagrams and screenshots, not only run instructions — the learner asked for it during the build.

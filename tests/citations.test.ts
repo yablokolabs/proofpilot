@@ -181,6 +181,67 @@ describe("validateVerdict", () => {
     expect(verdict.citations[0].stance).toBe("contradicts");
   });
 
+  it("changes supported to unverified when a confirmed reputable source contradicts the claim", () => {
+    const verdict = validateVerdict(
+      raw({
+        citations: [
+          { sourceIndex: 0, excerpt: EXCERPT, stance: "supports", sourceType: "primary" },
+          {
+            sourceIndex: 1,
+            excerpt: "Many people believe that Colombia grows the most coffee, but that has not been true",
+            stance: "contradicts",
+            sourceType: "secondary",
+          },
+        ],
+      }),
+      SOURCES,
+    );
+
+    expect(verdict.status).toBe("unverified");
+    expect(verdict.explanation).toMatch(/disagree/i);
+    expect(verdict.citations.map((c) => c.stance).sort()).toEqual(["contradicts", "supports"]);
+  });
+
+  it("changes contradicted to unverified when a confirmed reputable source supports the claim", () => {
+    const verdict = validateVerdict(
+      raw({
+        status: "contradicted",
+        citations: [
+          { sourceIndex: 0, excerpt: EXCERPT, stance: "supports", sourceType: "secondary" },
+          {
+            sourceIndex: 1,
+            excerpt: "Many people believe that Colombia grows the most coffee, but that has not been true",
+            stance: "contradicts",
+            sourceType: "secondary",
+          },
+        ],
+      }),
+      SOURCES,
+    );
+
+    expect(verdict.status).toBe("unverified");
+  });
+
+  it("keeps a supported verdict when the only source that disagrees is not primary or secondary", () => {
+    const verdict = validateVerdict(
+      raw({
+        citations: [
+          { sourceIndex: 0, excerpt: EXCERPT, stance: "supports", sourceType: "primary" },
+          {
+            sourceIndex: 1,
+            excerpt: "Many people believe that Colombia grows the most coffee, but that has not been true",
+            stance: "contradicts",
+            sourceType: "other",
+          },
+        ],
+      }),
+      SOURCES,
+    );
+
+    expect(verdict.status).toBe("supported");
+    expect(verdict.citations).toHaveLength(1);
+  });
+
   it("drops an invalid citation and keeps the valid one", () => {
     const verdict = validateVerdict(
       raw({

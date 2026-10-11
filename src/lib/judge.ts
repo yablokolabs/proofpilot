@@ -32,7 +32,9 @@ Citations:
 - "stance": "supports" or "contradicts", for this excerpt in relation to the claim.
 - "sourceType": "primary" for official statistics, government or intergovernmental bodies, peer-reviewed research, standards bodies, and an organisation's own documentation about itself. "secondary" for established news organisations, reference works, and recognised expert publications. "other" for forums, social media, marketing pages, personal blogs, content farms, and pages whose origin is not clear.
 
-For "supported" and "contradicted", give a minimum of one citation with the matching stance from a primary or secondary source. For "unverified", cite the passages that are the most relevant, or give an empty list.
+Cite each passage that is direct evidence about the claim, for and against. If one source supports the claim and a different source contradicts it, cite both: do not leave out the side that disagrees with your status. A passage that describes the claim as a common belief or a myth and then says that it is false is one "contradicts" citation, not a "supports" citation.
+
+For "supported" and "contradicted", give a minimum of one citation with the matching stance from a primary or secondary source. If primary or secondary sources disagree with each other about the fact, the status is "unverified". For "unverified", cite the passages that are the most relevant, or give an empty list.
 
 "explanation": for the person who wants to publish. A maximum of two sentences and 45 words. State what the sources say and how that compares with the claim. Name a source by its publisher, not by its number. Do not repeat the claim. Write the explanation before you decide the status.`;
 
