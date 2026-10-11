@@ -76,7 +76,7 @@ Not verified, to check at the start of the build:
 - **Checks:** `pnpm test` runs the unit tests. `pnpm check:live "<text>"` runs the real pipeline from the command line and prints the events.
 - **Submission:** a short demo video and a public GitHub repository. Deployment is optional and is not planned.
 - **Repository:** https://github.com/yablokolabs/proofpilot (public, MIT licence).
-- **Demo video file:** `demo/proofpilot-demo.mp4` (2:18). The public video link is not recorded yet: the learner uploads the video.
+- **Demo video:** https://vimeo.com/1234817956 (public, 2:18). The source file is `demo/proofpilot-demo.mp4`.
 
 ## Look and Feel
 From `prd.md > Look and Feel` and `scope.md > Inspiration & Identity`.

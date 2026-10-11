@@ -205,7 +205,9 @@ ProofPilot AI is an entry for the Devpost hackathon [Build With AI: Basics](http
 
 ## Demo video
 
-[`demo/proofpilot-demo.mp4`](demo/proofpilot-demo.mp4) is a narrated walkthrough of 2 minutes 18 seconds (1920x1080, H.264). Subtitles are in [`demo/proofpilot-demo.srt`](demo/proofpilot-demo.srt).
+**Watch the demo on Vimeo: <https://vimeo.com/1234817956>**
+
+It is a narrated walkthrough of 2 minutes 18 seconds. The same file is in the repository as [`demo/proofpilot-demo.mp4`](demo/proofpilot-demo.mp4) (1920x1080, H.264). Subtitles are in [`demo/proofpilot-demo.srt`](demo/proofpilot-demo.srt).
 
 The app scenes are one continuous recording of the running app with real model and search calls, with no cuts and no speed change. [`demo/storyboard.md`](demo/storyboard.md) says what is real in the video and how to rebuild it, and [`demo/script.md`](demo/script.md) has the narration.
 
