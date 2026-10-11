@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ClaimInput } from "@/components/ClaimInput";
+import { EvidenceCard } from "@/components/EvidenceCard";
 import { HighlightedText } from "@/components/HighlightedText";
 import { ReadinessSummary } from "@/components/ReadinessSummary";
 import { applyEvent, endOfStream, failCheck, initialReport, startCheck } from "@/lib/report";
@@ -13,8 +14,10 @@ const NETWORK_ERROR = "The analysis could not start. Check that the server is ru
 export default function Home() {
   const [draft, setDraft] = useState("");
   const [report, setReport] = useState(initialReport);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
   async function check() {
+    setSelectedId(null);
     setReport(startCheck(draft));
     try {
       const response = await fetch("/api/check", {
@@ -49,8 +52,10 @@ export default function Home() {
     complete: report.phase === "done",
   });
 
+  const selectedClaim = report.claims.find((claim) => claim.id === selectedId) ?? null;
+
   return (
-    <div className="mx-auto max-w-5xl px-5 pb-24 sm:px-8">
+    <div className="mx-auto max-w-6xl px-5 pb-24 sm:px-8">
       <header className="flex flex-wrap items-center justify-between gap-2 border-b border-ink py-4">
         {/* eslint-disable-next-line @next/next/no-img-element -- a static SVG needs no image optimisation */}
         <img
@@ -67,17 +72,34 @@ export default function Home() {
         <main className="mt-10 space-y-8">
           <ReadinessSummary summary={summary} />
 
-          {report.claims.length > 0 || summary.status === "no-claims" ? (
-            <section aria-label="Your text">
-              <HighlightedText text={report.text} claims={report.claims} verdicts={report.verdicts} />
-              {report.claims.length > 0 ? (
+          {report.claims.length > 0 ? (
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-start">
+              <section aria-label="Your text">
+                <HighlightedText
+                  text={report.text}
+                  claims={report.claims}
+                  verdicts={report.verdicts}
+                  selectedId={selectedId}
+                  onSelect={setSelectedId}
+                />
                 <p className="mt-6 border-t border-rule pt-4 text-sm text-muted">
-                  Only the highlighted claims were checked. Text with no highlight was not assessed.
+                  Only the highlighted claims were checked. Text with no highlight was not assessed. Select a
+                  highlight to see its evidence.
                 </p>
-              ) : null}
-            </section>
+              </section>
+              <div className="lg:sticky lg:top-6">
+                <EvidenceCard
+                  claim={selectedClaim}
+                  verdict={selectedClaim ? (report.verdicts[selectedClaim.id] ?? null) : null}
+                />
+              </div>
+            </div>
           ) : (
-            <p className="font-serif text-xl leading-[2.1] whitespace-pre-wrap text-muted">{report.text}</p>
+            <p
+              className={`font-serif text-xl leading-[2.1] whitespace-pre-wrap ${report.phase === "checking" ? "text-muted" : ""}`}
+            >
+              {report.text}
+            </p>
           )}
 
           <button

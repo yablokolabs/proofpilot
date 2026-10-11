@@ -62,6 +62,12 @@ body {
   animation: claim-pulse 1.4s ease-in-out infinite;
 }
 
+/* The selected claim is the one that the evidence card shows. */
+.claim-selected {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 1px;
+}
+
 @keyframes claim-pulse {
   50% {
     background: var(--color-rule);

@@ -29,7 +29,7 @@ Build mode: fast (the learner selected `nori-full-send`: autonomous work after p
   Learner check: Start the app with `pnpm dev`, paste an AI-written paragraph, and select Check claims. Say what you notice about the highlights and the summary, and what you would change.
   Commit: `Add credibility report page with inline highlights and summary`
 
-- [ ] **3. You can click a claim and inspect its evidence**
+- [x] **3. You can click a claim and inspect its evidence**
   Becomes usable: A click or a keyboard selection on a highlight opens its evidence card with the claim, the status, the explanation, and citations with a title, a link, an excerpt, and a source type. Unverified cards give the reason.
   Why now: It completes the core journey and the signature moment: the red claim and the evidence that contradicts it.
   PRD ref: `prd.md > Evidence Cards`, `prd.md > The Core Journey` (steps 5 to 7)
