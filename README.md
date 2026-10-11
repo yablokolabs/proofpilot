@@ -205,4 +205,14 @@ ProofPilot AI is an entry for the Devpost hackathon [Build With AI: Basics](http
 
 ## Demo video
 
-The demo video is at [`demo/proofpilot-demo.mp4`](demo/proofpilot-demo.mp4). The script and the storyboard are in [`demo/`](demo/).
+[`demo/proofpilot-demo.mp4`](demo/proofpilot-demo.mp4) is a narrated walkthrough of 2 minutes 18 seconds (1920x1080, H.264). Subtitles are in [`demo/proofpilot-demo.srt`](demo/proofpilot-demo.srt).
+
+The app scenes are one continuous recording of the running app with real model and search calls, with no cuts and no speed change. [`demo/storyboard.md`](demo/storyboard.md) says what is real in the video and how to rebuild it, and [`demo/script.md`](demo/script.md) has the narration.
+
+Narration: generated with [ElevenLabs](https://elevenlabs.io) text-to-speech.
+
+## Acknowledgements
+
+- [Devpost Learn Skill Pack](https://github.com/challengepost/learn-ai-basics) for the plan-first process.
+- [Diagram Design](https://github.com/cathrynlavery/diagram-design) (MIT) for the diagram design system and the SVG export script.
+- [ElevenLabs](https://elevenlabs.io) for the narration voice.

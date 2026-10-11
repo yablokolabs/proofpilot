@@ -1,0 +1,60 @@
+1
+00:00:00,500 --> 00:00:03,086
+AI can make you sound like an expert.
+
+2
+00:00:03,886 --> 00:00:05,871
+Until someone checks your facts.
+
+3
+00:00:06,671 --> 00:00:11,713
+This is ProofPilot AI. Don't just trust AI. Verify it.
+
+4
+00:00:12,513 --> 00:00:25,731
+Here is a marketing post that an AI wrote in seconds. It is polished, it is confident, and it is full of facts: a company milestone, a launch date, a famous landmark, and a statistic.
+
+5
+00:00:26,531 --> 00:00:31,964
+But confident doesn't always mean correct. Which of these facts would survive a check?
+
+6
+00:00:32,808 --> 00:00:43,074
+So let's check it. This is the real ProofPilot app, recorded live, with nothing staged. We paste the draft, and select Check claims.
+
+7
+00:00:43,000 --> 00:00:53,580
+ProofPilot finds the factual claims and highlights them in place. Then it checks each claim against live web sources, and the verdicts arrive one by one.
+
+8
+00:01:02,663 --> 00:01:13,948
+And there it is. Two claims are supported. One is contradicted. One is unverified. The verdict at the top is clear: review before publishing.
+
+9
+00:01:14,450 --> 00:01:27,433
+Select the red claim. The Great Wall of China is not visible from space with the naked eye. ProofPilot shows the exact passage that contradicts the claim, with a link to the source.
+
+10
+00:01:27,878 --> 00:01:34,592
+Code confirms that every excerpt really is in the retrieved page, so a citation can never be invented.
+
+11
+00:01:35,039 --> 00:01:43,294
+The amber claim is a statistic with no reputable source. ProofPilot does not guess. It says: unverified.
+
+12
+00:01:43,715 --> 00:01:49,462
+And the green claims come with their evidence too. Transparency, not blind trust.
+
+13
+00:01:50,475 --> 00:02:01,237
+ProofPilot is for anyone who publishes with AI: professionals, students, researchers, and content creators. One wrong fact can cost your credibility.
+
+14
+00:02:02,037 --> 00:02:07,889
+So before you publish AI-generated content, check whether the facts can survive scrutiny.
+
+15
+00:02:08,689 --> 00:02:15,219
+ProofPilot AI. Look confident. Stay credible. Don't just trust AI. Verify it.
+

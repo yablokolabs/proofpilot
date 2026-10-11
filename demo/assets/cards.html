@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ProofPilot AI demo cards</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --paper:#faf8f4; --ink:#10223d; --muted:#4b6178; --rule:#e4dfd5; --brand:#2478b6;
+          --green:#17663c; --red:#a8261a; --amber:#875a00; }
+  * { box-sizing:border-box; margin:0; }
+  html, body { width:1920px; height:1080px; overflow:hidden; }
+  body { font-family:Inter, system-ui, sans-serif; color:var(--ink); }
+  .card { width:1920px; height:1080px; background:var(--paper); display:none; flex-direction:column;
+          align-items:center; justify-content:center; text-align:center; padding:0 200px; position:relative; }
+  .card.on { display:flex; }
+  .card::after { content:""; position:absolute; left:0; right:0; bottom:0; height:10px;
+                 background:linear-gradient(90deg,#3EE6DB,#5AA9FF 52%,#9A78FF); }
+  h1 { font-family:"Source Serif 4", Georgia, serif; font-weight:700; font-size:104px; line-height:1.12; letter-spacing:-0.02em; }
+  h2 { font-family:"Source Serif 4", Georgia, serif; font-weight:600; font-size:72px; line-height:1.2; letter-spacing:-0.01em; }
+  p.sub { font-size:40px; color:var(--muted); margin-top:40px; line-height:1.4; }
+  .eyebrow { font-size:26px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted); margin-bottom:36px; }
+  .mark { position:absolute; top:56px; left:72px; height:96px; }
+  .logo-big { width:1240px; margin-bottom:24px; }
+  .draft { font-family:"Source Serif 4", Georgia, serif; font-size:43px; line-height:1.62; text-align:left; background:#fff;
+           border:1px solid var(--rule); border-left:10px solid var(--ink); padding:52px 64px; }
+  .dim .draft, .dim .eyebrow { opacity:0.08; }
+  .over { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 200px; }
+  ul.who { list-style:none; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:28px 40px; margin-top:56px; width:1280px; }
+  ul.who li { font-size:46px; font-weight:600; background:#fff; border:1px solid var(--rule); border-left:10px solid var(--brand); padding:34px 44px; text-align:left; }
+  .url { font-family:ui-monospace, Menlo, monospace; font-size:38px; color:var(--brand); margin-top:56px; }
+  .small { font-size:28px; color:var(--muted); margin-top:20px; }
+  /* Caption mode: a transparent frame with one lower-third bar, laid over the app footage. */
+  body.caption { background:transparent; }
+  .lower { position:absolute; left:0; right:0; bottom:0; padding:30px 96px 34px; background:rgba(16,34,61,0.94); color:#fff;
+           font-size:40px; font-weight:500; line-height:1.3; text-align:center; border-top:6px solid #5AA9FF; }
+  .lower b.g { color:#7ee0a6; } .lower b.r { color:#ff9d92; } .lower b.a { color:#ffd479; }
+</style>
+</head>
+<body>
+<section class="card" id="hook-1"><img class="mark" src="../../public/brand/proofpilot_logo.png" alt=""><h1>AI can make you sound like an expert.</h1></section>
+<section class="card" id="hook-2"><img class="mark" src="../../public/brand/proofpilot_logo.png" alt=""><h1>Until someone checks your facts.</h1></section>
+<section class="card" id="hook-3"><img class="logo-big" src="../../public/brand/proofpilot_logo.png" alt="ProofPilot AI"><p class="sub">The credibility check before you hit publish.</p></section>
+<section class="card" id="problem-1"><p class="eyebrow">An AI wrote this draft in seconds</p><div class="draft" data-draft></div></section>
+<section class="card dim" id="problem-2"><p class="eyebrow">&nbsp;</p><div class="draft" data-draft></div>
+  <div class="over"><h1>Confident doesn&rsquo;t always mean correct.</h1><p class="sub">Which of these &ldquo;facts&rdquo; would survive a check?</p></div></section>
+<section class="card" id="why-1"><p class="eyebrow">For anyone who publishes with AI</p><h2>One wrong fact can cost your credibility.</h2>
+  <ul class="who"><li>Professionals</li><li>Students</li><li>Researchers</li><li>Content creators</li></ul></section>
+<section class="card" id="why-2"><img class="mark" src="../../public/brand/proofpilot_logo.png" alt=""><h2>Before you publish AI-generated content, check whether the facts can survive scrutiny.</h2></section>
+<section class="card" id="close"><img class="logo-big" src="../../public/brand/proofpilot_logo.png" alt="ProofPilot AI"><h2>Look Confident. Stay Credible.</h2>
+  <p class="url">github.com/yablokolabs/proofpilot</p><p class="small">Built for the Devpost hackathon Build With AI: Basics</p></section>
+<div class="lower" id="lower" hidden></div>
+<script>
+  // ?card=<id> shows one title card. ?caption=<html>&draft=<text> shows one caption bar on a transparent page.
+  const q = new URLSearchParams(location.search);
+  document.querySelectorAll("[data-draft]").forEach((el) => (el.textContent = q.get("draft") || ""));
+  if (q.get("card")) document.getElementById(q.get("card")).classList.add("on");
+  if (q.get("caption")) { document.body.classList.add("caption"); const l = document.getElementById("lower"); l.innerHTML = q.get("caption"); l.hidden = false; }
+</script>
+</body>
+</html>

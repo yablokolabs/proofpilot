@@ -1,0 +1,17 @@
+[
+  {"id": "n01", "scene": "hook-1", "text": "AI can make you sound like an expert."},
+  {"id": "n02", "scene": "hook-2", "text": "Until someone checks your facts."},
+  {"id": "n03", "scene": "hook-3", "text": "This is ProofPilot AI. Don't just trust AI. Verify it."},
+  {"id": "n04", "scene": "problem-1", "text": "Here is a marketing post that an AI wrote in seconds. It is polished, it is confident, and it is full of facts: a company milestone, a launch date, a famous landmark, and a statistic."},
+  {"id": "n05", "scene": "problem-2", "text": "But confident doesn't always mean correct. Which of these facts would survive a check?"},
+  {"id": "n06", "scene": "app", "text": "So let's check it. This is the real ProofPilot app, recorded live, with nothing staged. We paste the draft, and select Check claims."},
+  {"id": "n07", "scene": "checking", "text": "ProofPilot finds the factual claims and highlights them in place. Then it checks each claim against live web sources, and the verdicts arrive one by one."},
+  {"id": "n08", "scene": "report", "text": "And there it is. Two claims are supported. One is contradicted. One is unverified. The verdict at the top is clear: review before publishing."},
+  {"id": "n09", "scene": "contradicted", "text": "Select the red claim. The Great Wall of China is not visible from space with the naked eye. ProofPilot shows the exact passage that contradicts the claim, with a link to the source."},
+  {"id": "n10", "scene": "evidence", "text": "Code confirms that every excerpt really is in the retrieved page, so a citation can never be invented."},
+  {"id": "n11", "scene": "unverified", "text": "The amber claim is a statistic with no reputable source. ProofPilot does not guess. It says: unverified."},
+  {"id": "n12", "scene": "supported", "text": "And the green claims come with their evidence too. Transparency, not blind trust."},
+  {"id": "n13", "scene": "why-1", "text": "ProofPilot is for anyone who publishes with AI: professionals, students, researchers, and content creators. One wrong fact can cost your credibility."},
+  {"id": "n14", "scene": "why-2", "text": "So before you publish AI-generated content, check whether the facts can survive scrutiny."},
+  {"id": "n15", "scene": "close", "text": "ProofPilot AI. Look confident. Stay credible. Don't just trust AI. Verify it."}
+]

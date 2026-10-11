@@ -19,3 +19,7 @@ node_modules/
 out/
 next-env.d.ts
 *.tsbuildinfo
+
+# Demo video intermediates that can be rebuilt
+/demo/assets/footage/frames/
+/demo/assets/build/
