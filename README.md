@@ -216,3 +216,7 @@ Narration: generated with [ElevenLabs](https://elevenlabs.io) text-to-speech.
 - [Devpost Learn Skill Pack](https://github.com/challengepost/learn-ai-basics) for the plan-first process.
 - [Diagram Design](https://github.com/cathrynlavery/diagram-design) (MIT) for the diagram design system and the SVG export script.
 - [ElevenLabs](https://elevenlabs.io) for the narration voice.
+
+## License
+
+[MIT](LICENSE)
