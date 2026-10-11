@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One check, message by message</title>
+<style>
+  body { margin: 0; background: #faf8f4; display: flex; justify-content: center; padding: 3rem 2rem; }
+  .frame { max-width: 1200px; width: 100%; }
+  .diagram-container { width: 100%; overflow-x: auto; }
+  svg { width: 100%; min-width: 960px; display: block; }
+</style>
+</head>
+<body>
+<div class="frame"><div class="diagram-container">
+<svg viewBox="0 0 960 672" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="verification-sequence-title verification-sequence-desc">
+<title id="verification-sequence-title">One check, message by message</title>
+<desc id="verification-sequence-desc">The user pastes text and the page posts it to the check route. The route asks the language model for claims, locates the quotes, and streams a claims event. For each claim it searches Tavily, asks the language model for a verdict, validates the citations in code, and streams a verdict event. A done event ends the stream. Selecting a highlight needs no server call.</desc>
+<defs>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4b6178"/></marker>
+<marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2478b6"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#faf8f4"/>
+<text x="32" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b6178" text-anchor="start" letter-spacing="2">SEQUENCE</text>
+<text x="32" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="400" fill="#10223d" text-anchor="start">One check, message by message</text>
+<line x1="96" y1="144" x2="96" y2="652" stroke="#d5cfc3" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="288" y1="144" x2="288" y2="652" stroke="#d5cfc3" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="480" y1="144" x2="480" y2="652" stroke="#d5cfc3" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="672" y1="144" x2="672" y2="652" stroke="#d5cfc3" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="864" y1="144" x2="864" y2="652" stroke="#d5cfc3" stroke-width="1" stroke-dasharray="4 4"/>
+<path d="M 96 184 L 286 184" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 288 220 L 478 220" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 480 256 L 670 256" fill="none" stroke="#2478b6" stroke-width="1.5" marker-end="url(#arrow-accent)"/>
+<path d="M 672 292 L 482 292" fill="none" stroke="#4b6178" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<path d="M 480 348 L 290 348" fill="none" stroke="#4b6178" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<path d="M 480 420 L 862 420" fill="none" stroke="#2478b6" stroke-width="1.5" marker-end="url(#arrow-accent)"/>
+<path d="M 864 452 L 482 452" fill="none" stroke="#4b6178" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<path d="M 480 484 L 670 484" fill="none" stroke="#2478b6" stroke-width="1.5" marker-end="url(#arrow-accent)"/>
+<path d="M 672 516 L 482 516" fill="none" stroke="#4b6178" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<path d="M 480 552 L 290 552" fill="none" stroke="#4b6178" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<path d="M 480 596 L 290 596" fill="none" stroke="#4b6178" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<path d="M 96 632 L 286 632" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="32" y="104" width="128" height="40" rx="8" fill="#ffffff" stroke="#10223d" stroke-width="1"/><text x="96.0" y="129.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">User</text>
+<rect x="224" y="104" width="128" height="40" rx="8" fill="#ffffff" stroke="#10223d" stroke-width="1"/><text x="288.0" y="129.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">Page</text>
+<rect x="416" y="104" width="128" height="40" rx="8" fill="#ffffff" stroke="#10223d" stroke-width="1"/><text x="480.0" y="129.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">/api/check</text>
+<rect x="608" y="104" width="128" height="40" rx="8" fill="#ffffff" stroke="#10223d" stroke-width="1"/><text x="672.0" y="129.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">Nebius LLM</text>
+<rect x="800" y="104" width="128" height="40" rx="8" fill="#ffffff" stroke="#10223d" stroke-width="1"/><text x="864.0" y="129.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">Tavily</text>
+<text x="192.0" y="176" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">paste text, Check claims</text>
+<text x="384.0" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">POST { text }</text>
+<text x="576.0" y="248" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">extract claims</text>
+<text x="576.0" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">quotes + queries</text>
+<text x="492" y="316" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="start">locate quotes in the text (code)</text>
+<text x="384.0" y="340" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">event: claims</text>
+<rect x="216" y="368" width="712" height="196" rx="8" fill="none" stroke="#d5cfc3" stroke-width="1"/>
+<text x="228" y="388" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="start">LOOP · each claim, 4 in parallel</text>
+<text x="672.0" y="412" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">search(query)</text>
+<text x="672.0" y="444" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">url, title, content</text>
+<text x="576.0" y="476" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">judge(claim, sources)</text>
+<text x="576.0" y="508" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">status + excerpts</text>
+<text x="492" y="536" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="start">validate citations (code)</text>
+<text x="384.0" y="544" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">event: verdict</text>
+<text x="384.0" y="588" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">event: done</text>
+<text x="192.0" y="624" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">select highlight (no server call)</text>
+</svg>
+</div></div>
+</body>
+</html>

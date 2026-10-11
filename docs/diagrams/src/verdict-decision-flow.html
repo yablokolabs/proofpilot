@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How a claim gets its status</title>
+<style>
+  body { margin: 0; background: #faf8f4; display: flex; justify-content: center; padding: 3rem 2rem; }
+  .frame { max-width: 1200px; width: 100%; }
+  .diagram-container { width: 100%; overflow-x: auto; }
+  svg { width: 100%; min-width: 960px; display: block; }
+</style>
+</head>
+<body>
+<div class="frame"><div class="diagram-container">
+<svg viewBox="0 0 960 836" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="verdict-decision-flow-title verdict-decision-flow-desc">
+<title id="verdict-decision-flow-title">How a claim gets its status</title>
+<desc id="verdict-decision-flow-desc">A model verdict is accepted only after code confirms its citations. If the search or the model fails, no sources are found, the model says unverified, no confirmed citation from a primary or secondary source backs the status, or a confirmed reputable source says the opposite, the claim is Unverified. Otherwise it is Supported or Contradicted.</desc>
+<defs>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4b6178"/></marker>
+<marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2478b6"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#faf8f4"/>
+<text x="32" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b6178" text-anchor="start" letter-spacing="2">DECISION FLOW</text>
+<text x="32" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="400" fill="#10223d" text-anchor="start">How a claim gets its status</text>
+<path d="M 368 152 L 368 174" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 368 264 L 368 294" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 368 352 L 368 374" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 368 464 L 368 494" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 368 584 L 368 614" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 520 220 L 816 220 L 816 390" fill="none" stroke="#875a00" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 520 420 L 702 420" fill="none" stroke="#875a00" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 536 540 L 702 540" fill="none" stroke="#875a00" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 536 660 L 702 660" fill="none" stroke="#875a00" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 368 704 L 368 724 L 256 724 L 256 746" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 368 724 L 480 724 L 480 746" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="232" y="104" width="272" height="48" rx="8" fill="#ffffff" stroke="#10223d" stroke-width="1"/><text x="368.0" y="124.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">Model verdict + citations</text><text x="368.0" y="142.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">status, excerpts, stance, source type</text>
+<polygon points="368,176.0 520.0,220 368,264.0 216.0,220" fill="#ffffff" stroke="#10223d" stroke-width="1"/><text x="368" y="216" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#10223d" text-anchor="middle">Search worked, sources found,</text><text x="368" y="232" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#10223d" text-anchor="middle">and the model replied?</text>
+<rect x="232" y="296" width="272" height="56" rx="8" fill="#10223d" stroke="#10223d" stroke-width="1"/><text x="368.0" y="320.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Confirm each citation in code</text><text x="368.0" y="338.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#c9d6e2" text-anchor="middle">URL retrieved · excerpt in the page text</text>
+<polygon points="368,376.0 520.0,420 368,464.0 216.0,420" fill="#ffffff" stroke="#10223d" stroke-width="1"/><text x="368" y="416" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#10223d" text-anchor="middle">Model status is supported</text><text x="368" y="432" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#10223d" text-anchor="middle">or contradicted?</text>
+<polygon points="368,496.0 536.0,540 368,584.0 200.0,540" fill="#ffffff" stroke="#10223d" stroke-width="1"/><text x="368" y="536" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#10223d" text-anchor="middle">A confirmed citation backs it,</text><text x="368" y="552" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#10223d" text-anchor="middle">from a primary or secondary source?</text>
+<polygon points="368,616.0 536.0,660 368,704.0 200.0,660" fill="#ffffff" stroke="#10223d" stroke-width="1"/><text x="368" y="656" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#10223d" text-anchor="middle">A confirmed reputable source</text><text x="368" y="672" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="500" fill="#10223d" text-anchor="middle">says the opposite?</text>
+<rect x="168" y="748" width="176" height="56" rx="8" fill="#e2f2e7" stroke="#17663c" stroke-width="1.5"/><text x="256.0" y="772.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#17663c" text-anchor="middle">SUPPORTED</text><text x="256.0" y="790.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">evidence agrees</text>
+<rect x="392" y="748" width="176" height="56" rx="8" fill="#fce6e2" stroke="#a8261a" stroke-width="1.5"/><text x="480.0" y="772.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#a8261a" text-anchor="middle">CONTRADICTED</text><text x="480.0" y="790.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">evidence disagrees</text>
+<rect x="704" y="392" width="224" height="296" rx="8" fill="#faedc8" stroke="#875a00" stroke-width="1.5"/><text x="816.0" y="545.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle"></text>
+<text x="816" y="424" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#875a00" text-anchor="middle">UNVERIFIED</text>
+<text x="816" y="460" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#10223d" text-anchor="middle">search or model failed</text>
+<text x="816" y="488" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#10223d" text-anchor="middle">no sources found</text>
+<text x="816" y="516" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#10223d" text-anchor="middle">model said unverified</text>
+<text x="816" y="544" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#10223d" text-anchor="middle">excerpt not in the source</text>
+<text x="816" y="572" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#10223d" text-anchor="middle">only weak sources</text>
+<text x="816" y="600" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#10223d" text-anchor="middle">reputable sources disagree</text>
+<text x="816" y="648" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="500" fill="#875a00" text-anchor="middle" font-style="italic">never a fabricated verdict</text>
+<text x="384" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="start">yes</text>
+<text x="384" y="486" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="start">yes</text>
+<text x="384" y="606" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="start">yes</text>
+<text x="384" y="718" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="start">no</text>
+<text x="608" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="start">no</text>
+<text x="608" y="412" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="start">no</text>
+<text x="616" y="532" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="start">no</text>
+<text x="616" y="652" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="start">yes</text>
+</svg>
+</div></div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From pasted text to a credibility report</title>
+<style>
+  body { margin: 0; background: #faf8f4; display: flex; justify-content: center; padding: 3rem 2rem; }
+  .frame { max-width: 1200px; width: 100%; }
+  .diagram-container { width: 100%; overflow-x: auto; }
+  svg { width: 100%; min-width: 960px; display: block; }
+</style>
+</head>
+<body>
+<div class="frame"><div class="diagram-container">
+<svg viewBox="0 0 960 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="verification-pipeline-title verification-pipeline-desc">
+<title id="verification-pipeline-title">From pasted text to a credibility report</title>
+<desc id="verification-pipeline-desc">Seven steps: paste text, extract claims with a language model, locate each quote in the text with code, retrieve evidence with Tavily, judge the claim with a language model, validate citations with code, and show the credibility report. Code rejects quotes that are not in the text and citations that are not in a retrieved source.</desc>
+<defs>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4b6178"/></marker>
+<marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2478b6"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#faf8f4"/>
+<text x="32" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#4b6178" text-anchor="start" letter-spacing="2">PIPELINE</text>
+<text x="32" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="400" fill="#10223d" text-anchor="start">From pasted text to a credibility report</text>
+<path d="M 144 156 L 158 156" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 272 156 L 286 156" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 400 156 L 414 156" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 528 156 L 542 156" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 656 156 L 670 156" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 784 156 L 798 156" fill="none" stroke="#4b6178" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M 344 220 L 344 282" fill="none" stroke="#4b6178" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<path d="M 728 220 L 728 282" fill="none" stroke="#4b6178" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+<rect x="32" y="120" width="112" height="72" rx="8" fill="#ffffff" stroke="#2478b6" stroke-width="1.5"/>
+<text x="88" y="152" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">Paste</text>
+<text x="88" y="172" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">text</text>
+<text x="88" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">≤ 3,000 chars</text>
+<rect x="160" y="120" width="112" height="72" rx="8" fill="#ffffff" stroke="#10223d" stroke-width="1"/>
+<text x="216" y="152" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">Extract</text>
+<text x="216" y="172" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">claims</text>
+<text x="216" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">LLM</text>
+<rect x="288" y="120" width="112" height="72" rx="8" fill="#10223d" stroke="#10223d" stroke-width="1"/>
+<text x="344" y="152" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Locate</text>
+<text x="344" y="172" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">spans</text>
+<text x="344" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">code</text>
+<rect x="416" y="120" width="112" height="72" rx="8" fill="#ffffff" stroke="#10223d" stroke-width="1"/>
+<text x="472" y="152" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">Retrieve</text>
+<text x="472" y="172" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">evidence</text>
+<text x="472" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">Tavily search</text>
+<rect x="544" y="120" width="112" height="72" rx="8" fill="#ffffff" stroke="#10223d" stroke-width="1"/>
+<text x="600" y="152" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">Judge</text>
+<text x="600" y="172" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">claim</text>
+<text x="600" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">LLM</text>
+<rect x="672" y="120" width="112" height="72" rx="8" fill="#10223d" stroke="#10223d" stroke-width="1"/>
+<text x="728" y="152" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Validate</text>
+<text x="728" y="172" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">citations</text>
+<text x="728" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">code</text>
+<rect x="800" y="120" width="112" height="72" rx="8" fill="#ffffff" stroke="#2478b6" stroke-width="1.5"/>
+<text x="856" y="152" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">Credibility</text>
+<text x="856" y="172" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">report</text>
+<text x="856" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">highlights</text>
+<text x="32" y="268" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="start">What the code rejects</text>
+<rect x="176" y="284" width="336" height="56" rx="8" fill="#faf8f4" stroke="#d5cfc3" stroke-width="1" stroke-dasharray="4 4"/><text x="344.0" y="308.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">A quote that is not in the text</text><text x="344.0" y="326.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">not highlighted · counted as not assessed</text>
+<rect x="544" y="284" width="384" height="56" rx="8" fill="#faf8f4" stroke="#d5cfc3" stroke-width="1" stroke-dasharray="4 4"/><text x="736.0" y="308.0" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#10223d" text-anchor="middle">An excerpt that is not in the retrieved source</text><text x="736.0" y="326.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#4b6178" text-anchor="middle">citation dropped · no confirmed citation → Unverified</text>
+</svg>
+</div></div>
+</body>
+</html>
