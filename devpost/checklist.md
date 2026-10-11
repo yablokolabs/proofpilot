@@ -56,20 +56,20 @@ Build mode: fast (the learner selected `nori-full-send`: autonomous work after p
 
 ## Final Review
 
-- [ ] Fix the hydration warning that the learner reported — cause: a browser extension added `rtrvr-*` attributes to `<html>` before React loaded. `suppressHydrationWarning` is now on `<html>` in `src/app/layout.tsx`. Verified by the agent with a simulated extension attribute: the error appeared before the change and not after it. Waiting for the learner to retry.
+- [x] Fix the hydration warning that the learner reported — cause: a browser extension added `rtrvr-*` attributes to `<html>` before React loaded. `suppressHydrationWarning` is now on `<html>` in `src/app/layout.tsx`. Verified by the agent with a simulated extension attribute: the error appeared before the change and not after it. The learner retried and confirmed that the error is gone.
 - Known behaviour, not changed: when the same claim occurs two times in a text, only the first occurrence is highlighted. The learner was told and did not ask for a change.
-- [ ] Final review complete — feedback resolved and learner confirms ready to ship
+- [x] Final review complete — feedback resolved and learner confirms ready to ship
 
 ## Code Tour and App Map
 
 - [x] Learning activity complete — guided route, focused alternative, prior practice connected, or brief recap
-- [ ] Optional edit and transfer reflection addressed — offered/declined/already covered/not applicable as appropriate
+- [x] Optional edit and transfer reflection addressed — offered/declined/already covered/not applicable as appropriate
 - [x] `devpost/app-map.html` generated from finished code, checked, and shown, including a project-grounded practice to reuse
 
 Activity and evidence: Prior practice connected, as a brief recap by the agent. The unknown in `spec.md > Decisions and Open Issues` (a verdict from live search and a model cannot be guaranteed) had an agreed check: repeated real runs. In slice 4 that check found one claim with three different verdicts in three runs. The fix is the "sources disagree" rule in `src/lib/citations.ts` with tests in `tests/citations.test.ts`, and the result is under Revisions. The learner did not do this investigation hands-on.
 Route and stops: Reference route only, not toured: `check` in `src/app/page.tsx`, `runCheck` in `src/lib/pipeline.ts`, `validateVerdict` in `src/lib/citations.ts`.
 Edit outcome: not applicable
-Reflection: offered
+Reflection: offered, not answered
 Activity mode: recap
 
 ## Revisions
